@@ -1,0 +1,14 @@
+@import 'partials/reset.css';
+@import 'partials/variables.css';
+@import 'partials/base.css';
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  & h1 {
+    font-family: var(--family-lobster);
+  }
+}

@@ -1,0 +1,48 @@
+html {
+  height: 100%;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+body {
+  margin: 0 auto;
+  background-color: var(--bg-color);
+  min-width: var(--min-width);
+  height: 100%;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  line-height: 1.5;
+  word-break: break-word;
+  color: var(--text);
+  font-family: var(--family-sans-serif);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;
+
+  @media only screen and (--retina-screen) {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+@font-face {
+  font-family: 'Lobster';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../fonts/lobster.woff2') format('woff2'), url('../fonts/lobster.woff') format('woff');
+}
+
+.pretty-border {
+  box-shadow: 0 0 0 1px;
+
+  @media only screen and (--retina-screen) {
+    box-shadow: 0 0 0 0.5px;
+  }
+
+  @media only screen and (--retina-screen-3) {
+    box-shadow: 0 0 0 0.33333333px;
+  }
+
+  @media only screen and (--retina-screen-4) {
+    box-shadow: 0 0 0 0.25px;
+  }
+}

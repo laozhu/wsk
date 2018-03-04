@@ -1,0 +1,56 @@
+:root {
+  /* Colors */
+  --black: hsl(0, 0%, 0%);
+  --black-bis: hsl(0, 0%, 7%);
+  --black-ter: hsl(0, 0%, 14%);
+  --grey-darker: hsl(0, 0%, 21%);
+  --grey-dark: hsl(0, 0%, 29%);
+  --grey: hsl(0, 0%, 48%);
+  --grey-light: hsl(0, 0%, 71%);
+  --grey-lighter: hsl(0, 0%, 86%);
+  --white-ter: hsl(0, 0%, 96%);
+  --white-bis: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --red: hsl(348, 100%, 61%);
+  --orange: hsl(14, 100%, 53%);
+  --yellow: hsl(48, 100%, 67%);
+  --green: hsl(164, 96%, 33%);
+  --blue: hsl(217, 71%, 53%);
+  --indigo: hsl(275, 100%, 25%);
+  --purple: hsl(271, 100%, 71%);
+  --primary: var(--green);
+  --text: color(var(--black) alpha(84%));
+  --bg-color: var(--white-bis);
+
+  /* Fonts */
+  --size-1: 2.25rem;
+  --size-2: 2rem;
+  --size-3: 1.75rem;
+  --size-4: 1.5rem;
+  --size-5: 1.25rem;
+  --size-6: 1rem;
+  --size-7: 0.875rem;
+  --size-8: 0.75rem;
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --family-latin: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Open Sans", "Helvetica Neue", Helvetica;
+  --family-cjk: "PingFang SC", "PingFang TC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans CJK TC", "Noto Sans CJK JP", "WenQuanYi Micro Hei";
+  --family-sans-serif: -apple-system, BlinkMacSystemFont, var(--family-latin), var(--family-cjk), SimSun, Arial, sans-serif;
+  --family-monospace: "Roboto Mono", "Fira Mono", "Source Code Pro", "Oxygen Mono", "Ubuntu Mono", "Courier New", Courier, monospace;
+  --family-lobster: 'Lobster', sans-serif;
+
+  /* Base */
+  --min-width: 20rem;
+  --max-width: 40rem;
+}
+
+/* Custom Media Queries */
+@custom-media --mobile-viewport (max-width: 40rem);
+@custom-media --desktop-viewport (min-width: 40rem);
+@custom-media --short-viewport (max-height: 40rem);
+@custom-media --retina-screen (min-device-pixel-ratio: 2), (min-resolution: 2dppx), (min-resolution: 192dpi);
+@custom-media --retina-screen-3 (min-device-pixel-ratio: 3), (min-resolution: 3dppx), (min-resolution: 288dpi);
+@custom-media --retina-screen-4 (min-device-pixel-ratio: 4), (min-resolution: 4dppx), (min-resolution: 384dpi);
