@@ -1,0 +1,188 @@
+{
+  "name": "wsk",
+  "version": "1.0.0",
+  "description": "Web starter kit for agile web font-end development.",
+  "main": "src/index.js",
+  "repository": "https://github.com/laozhu/wsk",
+  "author": {
+    "name": "Ritchie Zhu",
+    "email": "laozhu.me@gmail.com",
+    "url": "https://laozhu.me"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn clean && yarn build && yarn mock",
+    "dev": "cross-env NODE_ENV=development webpack -w -d --bail",
+    "dev:server": "cross-env NODE_ENV=development SERVER=1 webpack-serve -w -d --bail",
+    "build": "cross-env NODE_ENV=production webpack -p --bail",
+    "build:analyzer": "cross-env NODE_ENV=production ANALYZER=1 webpack -p --bail",
+    "eslint": "eslint src webpack.config.js --ext .js,.html --cache && exit 0",
+    "eslint:fix": "eslint src webpack.config.js --ext .js,.html --cache --fix && exit 0",
+    "stylelint": "stylelint 'src/**/*.{css,scss}' && exit 0",
+    "stylelint:fix": "stylelint 'src/**/*.{css,scss}' --fix && exit 0",
+    "imagemin": "open -a ImageOptim ./src/{images,assets}",
+    "mock": "json-server -w ./src/data/db.json -s ./dist -r ./src/data/_routes.json -m ./src/data/_middlewares.js",
+    "clean": "rimraf dist .eslintcache npm-debug.log yarn-error.log",
+    "browsers": "browserslist",
+    "ngrok": "ngrok http 8080"
+  },
+  "engines": {
+    "node": ">= 9.0.0",
+    "npm": ">=5.0.0",
+    "yarn": ">= 1.6.0"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE < 9",
+    "not Android < 4.4",
+    "not samsung < 6",
+    "not ie_mob 1-11",
+    "not opera 1-100",
+    "not op_mob 1-50",
+    "not op_mini all"
+  ],
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "loose": true,
+          "debug": false,
+          "modules": false,
+          "useBuiltIns": "usage"
+        }
+      ]
+    ],
+    "plugins": [
+      [
+        "transform-imports",
+        {}
+      ],
+      "@babel/plugin-syntax-dynamic-import"
+    ]
+  },
+  "postcss": {
+    "plugins": {
+      "postcss-easy-import": {
+        "prefix": "_",
+        "extensions": [
+          "css",
+          "scss"
+        ]
+      },
+      "postcss-normalize": {},
+      "precss": {},
+      "rucksack-css": {},
+      "postcss-cssnext": {},
+      "css-mqpacker": {}
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 9,
+      "sourceType": "module"
+    },
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "extends": [
+      "airbnb-base",
+      "plugin:import/errors",
+      "plugin:import/warnings"
+    ],
+    "rules": {
+      "no-console": 0,
+      "compat/compat": "error"
+    },
+    "plugins": [
+      "compat",
+      "html",
+      "import"
+    ]
+  },
+  "eslintIgnore": [
+    "dist"
+  ],
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-concentric-order"
+    ],
+    "plugins": [
+      "stylelint-order",
+      "stylelint-no-unsupported-browser-features"
+    ],
+    "rules": {
+      "order/order": [
+        "dollar-variables",
+        "custom-properties",
+        "declarations",
+        "rules",
+        "at-rules"
+      ],
+      "plugin/no-unsupported-browser-features": [
+        true,
+        {
+          "ignore": []
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0-beta.46",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.46",
+    "@babel/preset-env": "7.0.0-beta.46",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "8.0.0-beta.2",
+    "babel-plugin-transform-imports": "^1.5.0",
+    "browserslist": "^3.2.6",
+    "copy-webpack-plugin": "^4.5.1",
+    "cross-env": "^5.1.4",
+    "css-loader": "^0.28.11",
+    "css-mqpacker": "^6.0.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-compat": "^2.2.0",
+    "eslint-plugin-html": "^4.0.3",
+    "eslint-plugin-import": "^2.11.0",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "internal-ip": "^3.0.1",
+    "json-server": "^0.12.2",
+    "mini-css-extract-plugin": "^0.4.0",
+    "postcss": "^6.0.21",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-load-config": "^1.2.0",
+    "postcss-loader": "^2.1.4",
+    "postcss-normalize": "^4.0.0",
+    "precss": "^3.1.2",
+    "rimraf": "^2.6.2",
+    "rucksack-css": "^1.0.2",
+    "script-ext-html-webpack-plugin": "^2.0.1",
+    "style-loader": "^0.21.0",
+    "stylelint": "^9.2.0",
+    "stylelint-config-concentric-order": "^3.1.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-no-unsupported-browser-features": "^3.0.0",
+    "stylelint-order": "^0.8.1",
+    "svg-url-loader": "^2.3.2",
+    "url-loader": "^1.0.1",
+    "webpack": "4.6.0",
+    "webpack-bundle-analyzer": "^2.11.1",
+    "webpack-cli": "2.1.2",
+    "webpack-manifest-plugin": "2.0.2",
+    "webpack-serve": "0.3.2"
+  },
+  "dependencies": {
+    "@babel/polyfill": "7.0.0-beta.46",
+    "async-es": "^2.6.0",
+    "axios": "^0.18.0",
+    "date-fns": "^1.29.0",
+    "lodash-es": "^4.17.8"
+  }
+}
