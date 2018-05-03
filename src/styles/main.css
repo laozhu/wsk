@@ -1,10 +1,16 @@
-@import 'partials/reset';
+@import 'partials/reset.css';
+
+html,
+body {
+  height: 100%;
+}
 
 body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  margin: 0;
   background-color: rebeccapurple;
+  color: white;
 }
 

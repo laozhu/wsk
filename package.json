@@ -63,13 +63,7 @@
   },
   "postcss": {
     "plugins": {
-      "postcss-easy-import": {
-        "prefix": "_",
-        "extensions": [
-          "css",
-          "scss"
-        ]
-      },
+      "postcss-import": {},
       "postcss-normalize": {},
       "precss": {},
       "rucksack-css": {},
@@ -126,7 +120,9 @@
       "plugin/no-unsupported-browser-features": [
         true,
         {
-          "ignore": []
+          "ignore": [
+            "flexbox"
+          ]
         }
       ]
     }
@@ -156,7 +152,7 @@
     "mini-css-extract-plugin": "^0.4.0",
     "postcss": "^6.0.21",
     "postcss-cssnext": "^3.1.0",
-    "postcss-easy-import": "^3.0.0",
+    "postcss-import": "^11.1.0",
     "postcss-load-config": "^1.2.0",
     "postcss-loader": "^2.1.4",
     "postcss-normalize": "^4.0.0",
